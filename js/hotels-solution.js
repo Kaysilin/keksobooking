@@ -1,4 +1,4 @@
-/* eslint globals: { hotels: true } */
+/* eslint globals:{hotels:true} */
 
 'use strict';
 
@@ -110,13 +110,13 @@
 
         case ReadyState.DONE:
         default:
-          if (loadedXhr.status == 200) {
+          if (xhr.status == 200) {
             var data = loadedXhr.response;
             hotelsContainer.classList.remove('hotels-list-loading');
             callback(JSON.parse(data));
           }
 
-          if (loadedXhr.status > 400) {
+          if (xhr.status > 400) {
             showLoadFailure();
           }
           break;
